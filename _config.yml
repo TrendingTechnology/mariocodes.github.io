@@ -13,14 +13,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Playing zone
+title: Mario Codes' Portfolio
 email: mariocodes1993@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Personal website to play with Jekyll and Github pages planned in the future
-  to be used as information / help for my personal projects.
+  Portfolio to play with Jekyll and Github pages planned in the future
+  to be used as information / help for my personal projects and use my
+  personal notes in remote.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mariocodes.github.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: to-do
+twitter_username: to-do # remove this and add linkedIn
 github_username:  MarioCodes
 
 # Build settings
