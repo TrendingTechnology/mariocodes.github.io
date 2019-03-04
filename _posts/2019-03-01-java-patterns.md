@@ -3,7 +3,7 @@ layout: post
 title: Java patterns
 date:   2019-03-01 16:57:00 +0100
 categories: programming java patterns
-permalink: /java/patterns
+permalink: /patterns
 ---
 Implementation of several patterns in Java, which may be used as future example on how to technically implement them.
 

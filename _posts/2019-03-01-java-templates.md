@@ -3,7 +3,7 @@ layout: post
 title: Java templates
 date:   2019-03-01 17:16:00 +0100
 categories: programming java templates
-permalink: /java/templates
+permalink: /templates/java
 ---
 
 Configurated out-of-the-box templates to start a project directly out of the box.  
