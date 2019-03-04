@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java Patterns
+title: Java patterns
 date:   2019-03-01 16:57:00 +0100
 categories: programming java patterns
 permalink: /java/patterns
