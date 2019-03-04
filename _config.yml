@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   personal notes in remote.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mariocodes.github.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: to-do # remove this and add linkedIn
+linkedin_username: MarioCodes
 github_username:  MarioCodes
 
 # Build settings
