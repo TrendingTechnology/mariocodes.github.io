@@ -1,7 +1,8 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: "About"
+permalink: "/about/"
+order: 2
 ---
 
 This is my personal portfolio, which I use as documentation for my little projects and to have an easy, online access to my notes, which I use in an almost daily basis.   
