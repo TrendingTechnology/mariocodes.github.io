@@ -23,7 +23,7 @@
                     I'm able to sort my goddam categories by my own order and not alphabetically.
             -->
             {% assign current_index = 0 %}
-            {% for page in site.pages %} <!-- For every page to check, start a new for loop with counter++ and check if it's the turn for the page to be inserted. -->
+            {% for all_pages in site.pages %} <!-- For every page to check, start a new for loop with counter++ and check if it's the turn for the page to be inserted. -->
                 {% for p in site.pages %}
                     {% if p.layout == 'page' and p.order == current_index %}
                         <a href="{{ p.url | prepend: site.baseurl | prepend: site.url }}" {% if p.url == page.url %}class="active"{% endif %}>{{ p.title }}</a>
