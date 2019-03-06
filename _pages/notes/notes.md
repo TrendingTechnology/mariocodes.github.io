@@ -2,6 +2,7 @@
 layout: page
 title:  "Notes"
 permalink: "/personal-notes/"
+order: 1
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lorem ut lorem fringilla ornare. Mauris cursus mi quis massa egestas, a finibus risus molestie. Sed aliquam sapien et hendrerit consequat. Quisque pharetra velit non massa laoreet, id posuere urna vehicula. Mauris eget ipsum interdum, eleifend arcu et, ornare enim. Aenean luctus massa ut ligula hendrerit pulvinar. Suspendisse pellentesque quis purus in mattis. Donec at rutrum massa. Vestibulum commodo est at tincidunt mattis. Suspendisse potenti.

@@ -17,11 +17,19 @@
     {% if site.show_menu == 1 %}
         {% if site.pages %}
         <div class="mainmenu">
-            <a href="{{ site.baseurl | prepend: site.url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-            {% for p in site.pages %}
-                {% if p.layout == 'page' %}
-                    <a href="{{ p.url | prepend: site.baseurl | prepend: site.url }}" {% if p.url == page.url %}class="active"{% endif %}>{{ p.title }}</a>
-                {% endif %}
+            <a href="{{ site.baseurl | prepend: site.url }}" {% if page.url == "/" %}class="active"{% endif %}>{{ site.home_sidebar }}</a>
+            <!--
+                Custom change. As per the limitations of liquid when working with arrays this was the only option I found which works. It's not nice but at least
+                    I'm able to sort my goddam categories by my own order and not alphabetically.
+            -->
+            {% assign current_index = 0 %}
+            {% for page in site.pages %} <!-- For every page to check, start a new for loop with counter++ and check if it's the turn for the page to be inserted. -->
+                {% for p in site.pages %}
+                    {% if p.layout == 'page' and p.order == current_index %}
+                        <a href="{{ p.url | prepend: site.baseurl | prepend: site.url }}" {% if p.url == page.url %}class="active"{% endif %}>{{ p.title }}</a>
+                        {% assign current_index = current_index | plus:1 %}
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
         </div>
         {% endif %}

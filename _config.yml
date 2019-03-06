@@ -9,6 +9,9 @@ twitter_handler:
 analytics_code: # UA-XXXXXXX-2
 disqus: # your_disqus_site
 
+# Custom added by me
+home_sidebar: Home # String to show as "Home" at the sidebar. It was hardcoded.
+
 # Social Accounts
 social_networks:
 -  { name: facebook, url: '' }
