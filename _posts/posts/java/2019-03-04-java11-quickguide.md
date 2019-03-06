@@ -23,7 +23,7 @@ Until Java8 we could use `Collections.unmodifiableList()` to achieve this, but t
 ```
 List inmutableList = List.of("bla", "ble", "bli");
 ```
-
+<!--more-->
 ### Private methods in Interfaces
 To avoid redundant code and more re-usability we can use _private_ and _private static_ methods directly in interfaces now. Their behaviour is the same as in a normal class
 ```

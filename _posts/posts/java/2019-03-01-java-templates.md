@@ -20,7 +20,7 @@ All of them contain all the common Frameworks that I use to develop. The differe
 mvn clean install  
 java -jar [name]-fat.jar -cluster
 ```  
-
+<!--more-->
 ### Spring Boot template
 #### How-to execute
 ```  

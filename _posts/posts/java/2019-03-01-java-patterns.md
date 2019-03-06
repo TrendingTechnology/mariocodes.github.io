@@ -23,6 +23,7 @@ DTO is the object which representates an entity of the database, with all its ow
 
 
 ## Structural
+<!--more-->
 ### Façade
 Helps with Model View Controller. Establishes a new layer to separate and encapsulate the code.
 
