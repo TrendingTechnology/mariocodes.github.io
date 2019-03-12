@@ -58,7 +58,8 @@ defaults:
     values:
       comments: "false"
 
-# Serhttps://mariocodes.github.io "https://mariocodes.github.io"
+# Serving
+url: "https://mariocodes.github.io"
 baseurl: ""
 
 # Includes
