@@ -74,7 +74,8 @@ paginate: 10
 paginate_path: "/page:num/"
 
 # Conversion
-markdown: kramdown
+markdown: redcarpet
+extensions: [fenced_code_blocks]
 excerpt_separator: <!--more-->
 
 # Assets Settings
