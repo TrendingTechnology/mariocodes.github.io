@@ -3,7 +3,7 @@ name: Mario Codes
 job_title: Java Developer
 email: mariocodes1993@gmail.com
 description: I work with great passion as a backend developer, currently at Team Neusta. In my free time I enjoy building little personal projects, learning languages or getting lost in nature.
-avatar: # https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg # TODO
+avatar: https://mariocodes.github.io/assets/images/avatar.jpg
 favicon: /favicon.ico # TODO
 twitter_handler:
 analytics_code: # UA-XXXXXXX-2
@@ -58,8 +58,7 @@ defaults:
     values:
       comments: "false"
 
-# Serving
-url: "https://mariocodes.github.io"
+# Serhttps://mariocodes.github.io "https://mariocodes.github.io"
 baseurl: ""
 
 # Includes
