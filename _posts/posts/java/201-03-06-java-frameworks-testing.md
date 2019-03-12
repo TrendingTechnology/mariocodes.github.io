@@ -8,7 +8,7 @@ permalink: /frameworks/java/testing
 
 ## Codearte's Catch exception
 The only thing it does, it's to do a bit easier to test and assert for exceptions in a Test Driven Development-like way. **To use together with AssertJ.** It only has two methods which are useful to me:
-```
+``` java
 // When
 BDDCatchException.when(this.instance).methodWhichThrowsException();
 
@@ -26,7 +26,7 @@ Outside of the basic `Assertions.assertThat(x).isEqualTo(y);` there is:
 
 ### Soft Assertions  
 Used to assert DTOs. With the basic Assertion when the first fails, it stops there and only shows that error. With soft assertions it executes all and shows all where there was an error.
-```
+``` java
 SoftAssertions.assertSoftly(soft -> {
     soft.assertThat(dto.getName()).isEqualTo("nme");
     soft.assertThat(dto.getAge()).isEqualTo(90);
@@ -36,7 +36,7 @@ SoftAssertions.assertSoftly(soft -> {
 
 ### Assert Collections
 Assertions if the original Beans are accessible to compare against
-```
+``` java
 // Given
 final TolkienCharacter aragorn = new TolkienCharacter("aragon", 200, Race.HUMAN);
 final TolkienCharacter frodo = new TolkienCharacter("frodo", 30, Race.HOBBIT);
@@ -53,7 +53,7 @@ Assertions.assertThat(fellowship)
 ```  
 
 Assertions if the original Beans are not accessible, or it woul be too much work to create them.
-```
+``` java
 // Given
 final List<TolkienCharacter> fellowship = this.prepareFellowship();
 
