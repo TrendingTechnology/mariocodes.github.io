@@ -7,7 +7,7 @@ permalink: /frameworks/java/vertx
 ---
 
 ### Compile & execute:  
-```
+``` bash
 mvn clean install  
 java -jar target/[substitute_with_name]-fat.jar -cluster
 ```
@@ -35,7 +35,7 @@ https://groups.google.com/forum/#!topic/vertx/4HdQvi2jIJ8
 ### Polyglot Verticles  
 _(For the example, I've used JS)_  
 It needs a new dependency in our _pom.xml_
-```
+``` xml
 <dependency>
     <groupId>io.vertx</groupId>
     <artifactId>vertx-lang-js</artifactId>
@@ -44,7 +44,7 @@ It needs a new dependency in our _pom.xml_
 ```  
 Watch out as by default `mvn clean install` does not pack _*.js_ files into a _-fat.jar_ if they're in a default java package. I've solved this, by writting the _.js_ verticle into the _/resources_ folder.  
 Also, for the _.js_ case, it may be needed to install _npm_ and _vertx-3_ dependencies for it to work.  
-```
+``` bash
 sudo apt-get install npm
 npm install vertx3-min
 ```  

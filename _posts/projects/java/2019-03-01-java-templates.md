@@ -16,14 +16,14 @@ All of them contain all the common Frameworks that I use to develop. The differe
 * Vertx
 
 #### How-to execute
-```  
+``` bash
 mvn clean install  
 java -jar [name]-fat.jar -cluster
 ```  
 <!--more-->
 ### Spring Boot template
 #### How-to execute
-```  
+``` bash
 mvn clean install
 java -jar [name].jar  
 ```
