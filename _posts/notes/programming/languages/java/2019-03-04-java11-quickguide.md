@@ -2,8 +2,8 @@
 layout: post
 title: From Java8 to Java11
 date:   2019-03-04 17:57:00 +0100
-categories: programming java java11 guide
-permalink: /cheatsheet/java11
+categories: programming java java9 java10 java11 quickguide
+permalink: /notes/languages/java8-java11
 ---
 
 ## Java 9
