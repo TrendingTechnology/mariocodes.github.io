@@ -196,8 +196,9 @@ List<String> strings = new ArrayList<>();
 strings.add("bla");
 strings.add("ble");
 
-List<String> unmodifiableStrings = strings.stream()
-										  .collect(Collectors.toUnmodifiableList());
+List<String> unmodifiableStrings =  
+   strings.stream()  
+  .collect(Collectors.toUnmodifiableList());
 ```
 
 #### Optional#orElseThrow()
@@ -209,7 +210,8 @@ String s = optionalName.orElseThrow(); // bla
 ```
 ``` java
 Optional<String> empty = Optional.empty();
-String s = empty.orElseThrow(); // throws java.util.NoSuchElementException
+// throws java.util.NoSuchElementException  
+String s = empty.orElseThrow();  
 ```
 
 ### References
@@ -296,7 +298,7 @@ To easily split a String into a Stream<String> of separate lines.
 String s = "bla\nble";
 List<String> lines = s.lines()  
 	.collect(Collectors.toList()); // bla  
-  					// ble
+  				       // ble
 ```
 
 ### Misc
