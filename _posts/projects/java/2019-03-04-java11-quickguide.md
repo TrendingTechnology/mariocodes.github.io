@@ -69,40 +69,44 @@ With the popularity of reactive programming, Java is adding support to it too wi
 _(Improved in Java11 again)_
 
 There's a new HTTP 2 Client API to support HTTP/2 protocol and WebSocket features. It also supports HTTP/1.1 and may be used sync. or async.
-``` java
+~~~ java
 Uri uri = new URI("http://example_request");
-HttpResponse response = HttpRequest.create(uri)
-								   .body(HttpRequest.noBody())
-								   .GET()
-								   .response();
-```
+HttpResponse response = HttpRequest.create(uri)  
+	.body(HttpRequest.noBody())  
+	.GET()  
+	.response();
+~~~
 
 #### Optionals
 ##### Optional#stream()
 If a value is present in the given Optional object, stream returns a sequential Stream with that value. Otherwise, it returns an empty Stream.
 ``` java
 Stream<Optional> employee = this.getEmployee(id);
-Stream employeeStream = employee.flatMap(Optional::stream);
+Stream employeeStream = employee  
+	.flatMap(Optional::stream);
 ```
 
 ##### Optional#ifPresentOrElse(Consumer<? super Tl> action, Runnable emptyAction)
 If a value is present, performs the given action with the value, otherwise performs the given empty-based action.
 ``` java
 Optional<Integer> opt = Optional.of(4);
-opt.ifPresentOrElse(System.out::println, () -> System.out.println("Not found"));
+opt.ifPresentOrElse(System.out::println,  
+	() -> System.out.println("Not found"));
 ```
 
 ##### Optional#or(Supplier<? extends Optional<? extends T>> supplier)
 Returns the value contained by the Optional if it has one, or the value given by the supplier if empty.
 ``` java
 Optional<String> opt = Optional.of("bla");
-Supplier<Optional<String>> supplier = () -> Optional.of("ble");
+Supplier<Optional<String>> supplier =  
+	() -> Optional.of("ble");
 System.out.println(opt.or(supplier)); // bla
 ```
 
 ``` java
 Optional<String> opt = Optional.empty()
-Supplier<Optional<String>> supplier = () -> Optional.of("ble");
+Supplier<Optional<String>> supplier =  
+	() -> Optional.of("ble");
 System.out.println(opt.or(supplier)); // ble
 ```
 
@@ -114,15 +118,16 @@ Takes a predicate as an argument and returns a Stream of the subset **until the 
 ``` java
 Stream.of(1, 2, 3, 4, 5)
 	  .takeWhile(i -> i < 4)
-	  .forEach(System.out::println); // 1
-	  								 // 2
-	  								 // 3
+	  .forEach(System.out::println); // 1  
+					 // 2  
+					 // 3  
 ```
 
 ##### Stream#iterate(T seed, Predicate<? super T> hasNext, UnaryOperator<T> next)
 It's similar to the _for loop_. First parameter is init value, second is the condition and third is to generate the next element.
 ``` java
-// start value = 2; while value < 20; then value *= value
+// start value = 2; while value < 20;   
+// then value *= value  
 IntStream.iterate(2, x -> x < 20, x -> x * x)
 		 .forEach(System.out::println);
 ```
@@ -289,8 +294,9 @@ String result = s.strip(); // bla (without spaces)
 To easily split a String into a Stream<String> of separate lines.
 ``` java
 String s = "bla\nble";
-List<String> lines = s.lines().collect(Collectors.toList()); // bla
-															  // ble
+List<String> lines = s.lines()  
+	.collect(Collectors.toList()); // bla  
+  					// ble
 ```
 
 ### Misc
