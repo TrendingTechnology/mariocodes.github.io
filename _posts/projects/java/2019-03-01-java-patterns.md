@@ -7,13 +7,12 @@ permalink: /patterns
 ---
 Implementation of several patterns in Java, which may be used as future example on how to technically implement them.
 
-(TODO: add here an anchor to the current categories).
-* Database
-* Structural
-* Behavioural
-* Creational
+* [Database](#database)
+* [Structural](#structural)
+* [Behavioural](#behavioural)
+* [Creational](#creational)
 
-___
+
 ## Database
 
 ### DAO & DTO
@@ -21,7 +20,7 @@ Data Access Object & Data Transfer Object.
 DAO - Design pattern, used to encapsulate the access to a persistence resource (e.g a database) and eliminate dependencies which come with the implementation of the code.
 DTO is the object which representates an entity of the database, with all its own properties to be manipulated.
 
-
+___
 ## Structural
 <!--more-->
 ### Façade
@@ -30,6 +29,7 @@ Helps with Model View Controller. Establishes a new layer to separate and encaps
 ### Singleton
 Limits and sets a way to access an unique object instantiation during the whole execution of a program.
 
+___
 ## Behavioural
 
 ### State
@@ -47,6 +47,7 @@ Parts:
  * Memento - It's a Snapshot which saves the content of the Originator in a punctual state.
  * Caretaker - Class where we do save the several Mementos. From it we do save or load Mementos.
 
+___
 ## Creational
 ### Builder
 Allows to create beans easily (and fluently) for cases where we have lots of parameters (+4-5), with some of them required and others optional.
@@ -54,12 +55,3 @@ Allows to create beans easily (and fluently) for cases where we have lots of par
 
 ### Factory
 Uses factory methods to add an abstraction layout. Allows for example to be able to connect to several databases doing the swap by just changing two parameters in a config file.
-___
-
-### Patterns to take a look into
-(TODO) Remove this section. Create and sync a Glo board and add this info directly as Issues into the repo.
-* flyweight
-* service provider framework
-* bridge
-* adapter
-* template method

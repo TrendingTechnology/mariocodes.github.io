@@ -146,7 +146,7 @@ i.forEach(System.out::println); //
 ```
 
 ### References
-https://www.journaldev.com/13121/java-9-features-with-examples
+[https://www.journaldev.com/13121/java-9-features-with-examples](https://www.journaldev.com/13121/java-9-features-with-examples)
 
 ## Java 10
 
@@ -215,8 +215,8 @@ String s = empty.orElseThrow();
 ```
 
 ### References
-https://www.journaldev.com/20395/java-10-features#local-variable-type-inference-jep-286
-https://howtodoinjava.com/java10/java10-features/
+[https://www.journaldev.com/20395/java-10-features#local-variable-type-inference-jep-286](https://www.journaldev.com/20395/java-10-features#local-variable-type-inference-jep-286)
+[https://howtodoinjava.com/java10/java10-features/](https://howtodoinjava.com/java10/java10-features/)
 
 ## Java 11
 
@@ -305,5 +305,5 @@ List<String> lines = s.lines()
 JavaEE and CORBA modules were removed.
 
 ### References
-https://www.azul.com/90-new-features-and-apis-in-jdk-11/  
-https://4comprehension.com/java-11-string-api-updates/
+[https://www.azul.com/90-new-features-and-apis-in-jdk-11/](https://www.azul.com/90-new-features-and-apis-in-jdk-11/)  
+[https://4comprehension.com/java-11-string-api-updates/](https://4comprehension.com/java-11-string-api-updates/)

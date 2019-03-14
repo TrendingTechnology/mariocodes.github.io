@@ -29,8 +29,8 @@ The downside of using always workers, is that the max. concurrency achievable is
 It can be executed by more than one Thread concurrently. Standard Java techniques for concurrency will be needed when programming. It's an advanced feature and they're not supported through all of Vert.x parts.   
 
 #### References  
-https://vertx.io/docs/vertx-core/java/#_verticle_types  
-https://groups.google.com/forum/#!topic/vertx/4HdQvi2jIJ8
+[https://vertx.io/docs/vertx-core/java/#_verticle_types](https://vertx.io/docs/vertx-core/java/#_verticle_types)  
+[https://groups.google.com/forum/#!topic/vertx/4HdQvi2jIJ8](https://groups.google.com/forum/#!topic/vertx/4HdQvi2jIJ8)
 
 ### Polyglot Verticles  
 _(For the example, I've used JS)_  
@@ -49,4 +49,4 @@ sudo apt-get install npm
 npm install vertx3-min
 ```  
 #### Reference  
-https://github.com/vert-x3/vertx-examples/tree/master/core-examples/src/main/js
+[https://github.com/vert-x3/vertx-examples/tree/master/core-examples/src/main/js](https://github.com/vert-x3/vertx-examples/tree/master/core-examples/src/main/js)

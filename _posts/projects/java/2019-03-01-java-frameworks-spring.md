@@ -30,8 +30,8 @@ The config for the several caches is specified in `ehcache.xml`
 It's an in-memory, highly concurrent Cache. It has built-in Eviction. It may be deployed in local mode but it's a best choice for its cluster mode (distributed or replicated).
 
 ##### References
-https://spring.io/guides/gs/caching/  
-https://www.baeldung.com/spring-cache-tutorial  
-http://websystique.com/spring/spring-4-cache-tutorial-with-ehcache/  
-https://blog.infinispan.org/2010/02/infinispan-as-local-cache.html  
-http://infinispan.org/docs/stable/user_guide/user_guide.html#clustering
+[https://spring.io/guides/gs/caching/](https://spring.io/guides/gs/caching/)  
+[https://www.baeldung.com/spring-cache-tutorial](https://www.baeldung.com/spring-cache-tutorial)  
+[http://websystique.com/spring/spring-4-cache-tutorial-with-ehcache/](http://websystique.com/spring/spring-4-cache-tutorial-with-ehcache/)  
+[https://blog.infinispan.org/2010/02/infinispan-as-local-cache.html](https://blog.infinispan.org/2010/02/infinispan-as-local-cache.html)  
+[http://infinispan.org/docs/stable/user_guide/user_guide.html#clustering](http://infinispan.org/docs/stable/user_guide/user_guide.html#clustering)
