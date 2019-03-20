@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Java - Cheat sheet
+title: Java - experience cheat sheet
 date:   2019-03-14 17:27:00 +0100
-categories: programming java cheatsheet
+categories: programming java cheat-sheet
 permalink: /notes/languages/java
 ---
 ## Convert checked into unchecked exception
@@ -18,7 +18,7 @@ public File exportFile(String fileName) {
   try (Writer writer = new FileWriter(file)) {
     writer.write("ID;Date\n");
     repo.findByActiveTrue()
-    .map(o -> o.getId() + ";" 
+    .map(o -> o.getId() + ";"
     	+ o.getCreationDate())
     .forEach(Unchecked.consumer(writer::write));
   }
@@ -41,8 +41,27 @@ final int year = invoiceDate.getYear();
 final YearMonth yearMonth =   
 		YearMonth.of(year, month);
 final int lastDayOfMonth =   
-		yearMonth.lengthOfMonth(); 
+		yearMonth.lengthOfMonth();
 ```
+
+## Read file sequentially  
+This reads big files _(>200 MBs)_ without loading the whole File in memory. This way we're able to read text files on the Gigabyte level. This example was done reading from a remote SFTP server.  
+
+~~~ java
+final ChannelSftp sftpClient = this.connect();
+final InputStream is = sftpClient.get(file);
+final InputStreamReader isReader
+      = new InputStreamReader(is);  
+
+try (final BufferedReader bffReader  
+      = new BufferedReader(isReader)) {
+  bffReader.lines()
+        .forEach(this::doAction);
+} catch(final IOException ex) {
+  log.error("bla", ex);
+}
+~~~
+
 ## Testing
 ### Inject SpringContext into IT _(JUnit)_
 
@@ -117,7 +136,7 @@ protected JSch createStubInstance() {
 @Test
 public void testWhatever() {  
   JSch jschMock = Mockito.mock(JSch.class);  
-	
+
   BDDMockito.given(realClass.createStubInstance())  
 	.willReturn(jschMock);
 }
@@ -128,7 +147,7 @@ Link javadoc to a method of the same class
 
 ``` java
 /*
-* This method does the same as 
+* This method does the same as
 * {@link #escape(Parameters) escape}
 * but with lists
 */
