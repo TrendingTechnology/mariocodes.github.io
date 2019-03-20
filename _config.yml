@@ -81,3 +81,7 @@ excerpt_separator: <!--more-->
 sass:
   sass_dir: assets/partials
   style: compressed
+
+# Plugins (added for seo-tag)
+plugins:
+ - jekyll-seo-tag

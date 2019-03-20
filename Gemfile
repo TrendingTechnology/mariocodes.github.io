@@ -19,4 +19,5 @@ gem "jekyll", "3.8.4"
 group :jekyll_plugins do
     gem "jekyll-paginate", "~> 1.1.0"
     gem 'listen', '~> 3.0'
+    gem 'jekyll-seo-tag' # https://github.com/jekyll/jekyll-seo-tag
 end
