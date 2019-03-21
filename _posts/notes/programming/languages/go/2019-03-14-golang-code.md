@@ -49,6 +49,7 @@ fmt.Println("my age is:", age,
 ~~~
 
 ## Functions
+### declaration
 The basic structure for a Function is
 
 ~~~ go
@@ -64,5 +65,47 @@ func functionName() {
 }
 ~~~
 
+For consecutive parameters with the same type, it is only needed to declare it once
+~~~ go
+// param1 is an int too
+func functionName(param1, param2 int) {
+
+}
+~~~
+
+Multiple return values
+~~~ go
+func functionName(param1, param2 int)(int, int) {
+  return param1, param2
+}
+
+func main() {
+  param1, param2 := functionName(12, 64)
+}
+~~~
+
+Named, multiple return values
+~~~ go
+func functionName(param1, param2 int)(result1, result2 int) {
+  result1 = param1
+  result2 = param2
+  return // no explicit return value
+}
+~~~
+
+### blank identifier
+`_` is known as the blank identifier. It can be used in place of any value of any type to discard it.  
+~~~ go
+// what happens if I only need result1 and want to discard result2?
+func functionName(param1, param2 int)(result1, result2 int) {
+  result1 = param1
+  result2 = param2
+  return // no explicit return value
+}
+
+func main() {
+  param1, _ := functionName(12, 64)
+}
+~~~
 ## Reference
 [https://golangbot.com/learn-golang-series/](https://golangbot.com/learn-golang-series/)
