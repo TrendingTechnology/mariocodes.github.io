@@ -3,7 +3,7 @@ layout: post
 title: Java Testing frameworks - notes
 date:   2019-03-06 13:28:00 +0100
 categories: programming java frameworks testing assertj codearte
-permalink: /frameworks/java/testing
+permalink: /notes/frameworks/java/testing
 ---
 
 ## Codearte's Catch exception

@@ -1,13 +1,12 @@
 ---
 layout: post
-title: Java frameworks - Spring notes
+title: Spring Cache
 date:   2019-03-06 13:31:00 +0100
-categories: programming java frameworks spring
-permalink: /frameworks/java/spring
+categories: programming java frameworks spring cache
+permalink: /notes/frameworks/java/spring/cache
 ---
 
-### Spring Context
-#### Spring Cache  
+### Spring Cache  
 A cache itself may be imagined as a key-value map. For a basic Cache we need:  
 * `@EnableCaching` tag in `@Configuration` class  
 * Declare a `CacheManager` Bean  

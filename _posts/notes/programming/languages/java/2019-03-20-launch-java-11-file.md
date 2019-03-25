@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Java11 - run file as script
+title: Java11 - Run file as a script
 date:   2019-03-20 18:09:00 +0100
 categories: programming java java11
-permalink: /java/java11/scripting
+permalink: /notes/languages/java/java11/scripting
 ---
 _(This uses > java11)_  
 

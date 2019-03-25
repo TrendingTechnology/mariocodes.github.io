@@ -3,7 +3,7 @@ layout: post
 title: Java frameworks - Vertx notes
 date:   2019-03-06 13:29:00 +0100
 categories: programming java frameworks vertx
-permalink: /frameworks/java/vertx
+permalink: /notes/frameworks/java/vertx
 ---
 
 ### Compile & execute:  
