@@ -5,5 +5,6 @@ permalink: "/about/"
 order: 2
 ---
 
-This is my personal portfolio, which I use as documentation for my little projects and to have an easy, online access to my notes, which I use in an almost daily basis.   
-You may copy and use anything that's been posted here for your personal use always that you don't charge for the product obtained with it.
+This is my personal portfolio, which I use to have an easy, online access to my own notes, as I use them in an almost daily basis to work or refresh knowledge.  
+
+It also includes documentation for my little personal projects.  
