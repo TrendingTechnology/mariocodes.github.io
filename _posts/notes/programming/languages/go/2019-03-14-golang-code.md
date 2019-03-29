@@ -6,10 +6,19 @@ categories: programming go code cheat-sheet
 permalink: /notes/languages/go/code
 ---
 
-# Compile
+# Installation
+## Compile
 To compile / build / run in Sublime
 1. `ctrl + shift + P`
 2. `go run`
+
+## Multiple workspaces
+For a custom installation, it's possible to give more than one value to `GOPATH`.
+~~~ bash
+export GOPATH="/home/msanchez/go/packages/bin:/home/msanchez/Documents/Personal/Github/language_testing/golang"
+~~~
+
+The first value is used as default to install packages. The second and next ones may be used as standalone workspaces. It's important for the root of the workspace to be `/src`, otherwise it will complain and not compile into `/bin`.
 
 # Code
 ## Template
@@ -107,5 +116,37 @@ func main() {
   param1, _ := functionName(12, 64)
 }
 ~~~
+
+## Packages
+Every go exec must have an entry point. This is a `main` function which has to reside in the `main` package.  
+
+We have the following tree:
+
+~~~ bash
+src/
+    programm/
+        custom_package/
+            custom.go # custom class
+    programm.go # This is the main
+~~~
+
+To install the custom package from `/src` execute `go install programm`
+
+To import the contents from `custom.go` and use it at `programm.go` we'll have to import it with a relative path
+
+~~~ go
+package main
+
+import (
+	"packages/custom"
+)
+
+func main() {
+  // code
+}
+~~~
+
+Only the functions which start with a capital letter at `custom.go` will be exported and accessible from the outside.
+
 ## Reference
 [https://golangbot.com/learn-golang-series/](https://golangbot.com/learn-golang-series/)
