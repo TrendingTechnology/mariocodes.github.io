@@ -50,6 +50,8 @@ It's a composition Tag which contains another three
 * `@ComponentScan` It lets you use another annotations such as `@Component` to declare Beans
 
 ## Web requests
+The basic structure is an application which will be started with the embedded tomcat. A controller marked with `@Controller` tag and a `@GetMapping("/")` tag, which returns the name of the _Thymeleaf_ view to give to the browser.  
+
 Controller class. It handles HTTP Requests and either gives it to a view to return HTML or writes data directly to the body (RESTful)  
 
 ~~~java
