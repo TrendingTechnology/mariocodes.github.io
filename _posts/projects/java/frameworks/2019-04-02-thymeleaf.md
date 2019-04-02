@@ -1,11 +1,10 @@
 ---
 layout: post
 title: Thymeleaf
-date:   2019-04-02 12:54:00 +0100
-categories: programming java frameworks thymeleaf
+date:   2019-04-01 13:40:00 +0100
+categories: programming java frameworks books spring thymeleaf
 permalink: /notes/frameworks/java/spring/thymeleaf
 ---
-
 Thymeleaf is an HTML template engine, which provides full Spring support.
 
 ~~~ html
@@ -55,20 +54,22 @@ Same example as above. There's a list from Objects added into the _Model_ at Jav
 @GetMapping
 public String process(final Model model) {
   final Ingredient ing1 =
-      new Ingredient("FLTO", "Flour tortilla", Type.WRAP);
+  new Ingredient("FLTO", "Flour tortilla", Type.WRAP);
   final Ingredient ing2 =
-      new Ingredient("COTO", "Corn tortilla", Type.WRAP);
+  new Ingredient("COTO", "Corn tortilla", Type.WRAP);
 
   final List<Ingredient> ingredients =
                       Arrays.asList(ing1, ing2);
 
   /**
-   * This adds a lists into the model with 2 Ingredients
-   *    with id = wrap
+   * This adds a lists into the model with
+   * 2 ingredients with id = wrap
    */
   for(final Type type : Type.values()) {
-    model.addAttribute(type.toString().toLowerCase(),
-      filterByType(ingredients, type));
+    model.addAttribute(
+      type.toString().toLowerCase(),
+      filterByType(ingredients, type)
+    );
   }
 
   return "design";
@@ -78,7 +79,10 @@ public String process(final Model model) {
 Iterate **only** the `wrap` ingredients
 ~~~ html
 <div th:each="ingredient: ${wrap}">
-  <input name="x" type="y" th:value="${ingredient.id}"/>
-  <span th:text="${ingredient.name}">PLACEHOLDER</span>
+  <input name="x" type="y"
+         th:value="${ingredient.id}"/>
+  <span th:text="${ingredient.name}">
+    PLACEHOLDER
+  </span>
 </div>
 ~~~
