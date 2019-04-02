@@ -78,16 +78,7 @@ Thymeleaf will automatically search for `/templates/home.html` and return it as 
 * `@PatchMapping`
 
 ### thymeleaf
-HTML template engine.
-~~~ html
-<h3>Designate your wrap:<h3>
-  <div th:each="ingredient: ${wrap}">
-    <input name="ingredients" type="checkbox"
-            th:value="${ingredient.id}" />
-    <span th:text="${ingredient.name}">ING</span>
-    <br/>
-  </div>
-~~~
+_(See thymeleaf notes)_
 
 ### redirection
 To redirect the browser to another view when the method is completely executed.
