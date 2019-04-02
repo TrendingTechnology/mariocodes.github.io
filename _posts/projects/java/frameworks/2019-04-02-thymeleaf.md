@@ -17,6 +17,9 @@ Thymeleaf is an HTML template engine, which provides full Spring support.
   </div>
 ~~~
 
+## Operators
+* `@{}` produces a context-relative path to the `/static/` folder
+
 ## Simple Tags
 
 * `th:src="@{images/taco.png}"` retrieves an image with relative path from `/static/`
@@ -85,4 +88,24 @@ Iterate **only** the `wrap` ingredients
     PLACEHOLDER
   </span>
 </div>
+~~~
+
+## Redirect to another view
+`redirect:/path/view`
+
+The difference is, if we have a `GET` where we return a normal view
+~~~ java
+@GetMapping
+public String process(final Model model) {
+  model.addAttribute("tacoDesign", new Taco());
+  return "design"; // return thymeleaf view
+}
+~~~
+It will execute all the previous code **before** the view is loaded and given to the user. If instead of this, we have a `POST` and once it's ready we want to give a new view to the user, we have to do it through redirect  
+~~~ java
+@PostMapping
+public String processDesign(final Taco taco) {
+    log.info("processing design '{}'", taco);
+    return "redirect:/orders/current";
+}
 ~~~
