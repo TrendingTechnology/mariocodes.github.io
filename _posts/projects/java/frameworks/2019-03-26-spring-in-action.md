@@ -80,11 +80,11 @@ Thymeleaf will automatically search for `/templates/home.html` and return it as 
 ### thymeleaf
 _(See thymeleaf notes)_
 
-## Validation
-Java's validation API works with Spring and Hibernate, this last adds a bunch of annotations to use.
+## Full Validation Example
+Java's validation API works with Spring and Hibernate, this last adds a bunch of annotations to use and may work together between Model, View and Controller.
 
 ### declare validation rules
-This is done at the class to validate
+This is done at the model.
 ~~~ java
 @Data
 public class Taco {
@@ -101,34 +101,32 @@ public class Taco {
 }
 ~~~
 
+We also have other tags such as
 ~~~ java
-@Data
-public class Order {
+@NotBlank(message="name is required")
+private String name;
 
-  @NotBlank(message="name is required")
-  private String name;
+@CreditCardNumber(message="card not valid")
+private String ccNumber;
 
-  @CreditCardNumber(message="card not valid")
-  private String ccNumber;
+@Pattern(regexp="here comes the regex",
+         message="must be MM/YY")
+private String ccExpiration;
 
-  @Pattern(regexp="here comes the regex",
-           message="must be MM/YY")
-  private String ccExpiration;
-
-  @Digits(integer=3, fraction=0,
-          message="invalid CVV")
-  private String ccCVV;
-
-}
+@Digits(integer=3, fraction=0,
+        message="invalid CVV")
+private String ccCVV;
 ~~~
 
-### declare validation method
-This is the place where the validation will be done.
+### activate validation
+This is done at the controller w. `@Valid`.
 ~~~ java
 @PostMapping
-public String process(@Valid final Taco design,
-                             final Errors errors) {
-  if(errors.hasErrors) {
+public String process(@Valid
+@ModelAttribute("design") final Taco design,
+                          final Errors errors)
+{
+  if(errors.hasErrors()) {
     return "design";
   }
   // do something
@@ -136,6 +134,40 @@ public String process(@Valid final Taco design,
 }
 ~~~
 If an error is found, the details of this error will be loaded into the `Errors` object
+
+### access the errors
+This is done at the view.
+~~~ html
+<form method="POST" th:object="${design}">
+
+<div th:if="${#fields.hasErrors()}">
+    <p class="validationError">
+      Please, correct following problems
+    </p>
+</div>
+
+<div>
+  <h3>Name your Taco creation:</h3>
+
+  <span class="validationError"
+        th:if="${#fields.hasErrors('name')}"
+        th:errors="*{name}">Placeholder</span>
+  <br/>
+  <input type="text" th:field="*{name}"/>
+
+  <button>Submit your taco</button>
+</div>
+</form>
+~~~
+
+### all broken together
+1. The tags `@NotNull` declare what's wrong and when an Error should be thrown.  
+2. At the controller with the line `@Valid @ModelAttribute("design") final Taco design` we declare what the model is and we assign it an `id = design`.  
+3. At the view form:
+* we access this model with `th:object="${design}"`
+* we check if the form has any error(s) with `th:if="${#fields.hasErrors()}"` to show a general error
+* we check a specific field with `th:if="${#fields.hasErrors('name')}"` and access the error message with `th:errors="*{name}"` to overwrite the placeholder.  
+  This `name` is a field of the model we gave. At this example `Taco` has a `private String name` field which is the one we're checking here.
 
 ## Databases
 ### JDBC (Java DataBase Connection)
