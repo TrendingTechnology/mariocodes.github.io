@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Thymeleaf
-date:   2019-04-01 13:40:00 +0100
+date:   2019-04-03 12:11:00 +0100
 categories: programming java frameworks books spring thymeleaf
 permalink: /notes/frameworks/java/spring/thymeleaf
 ---

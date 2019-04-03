@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spring in Action (1/5) - Foundational Spring
-date:   2019-03-26 13:42:00 +0100
+date:   2019-04-03 12:10:00 +0100
 categories: programming java frameworks books spring
 permalink: /notes/frameworks/java/spring/spring-in-action
 ---
@@ -79,16 +79,6 @@ Thymeleaf will automatically search for `/templates/home.html` and return it as 
 
 ### thymeleaf
 _(See thymeleaf notes)_
-
-### redirection
-To redirect the browser to another view when the method is completely executed.
-~~~ java
-@PostMapping
-public String processDesign(final Design design) {
-  // do things
-  return "redirect:/orders/current";
-}
-~~~
 
 ## Validation
 Java's validation API works with Spring and Hibernate, this last adds a bunch of annotations to use.
