@@ -54,6 +54,7 @@ The basic structure is an application which will be started with the embedded to
 
 Controller class. It handles HTTP Requests and either gives it to a view to return HTML or writes data directly to the body (RESTful)  
 
+### basic controller
 ~~~java
 @Controller
 @RequestMapping("/design")
@@ -68,6 +69,23 @@ public class MyController {
 ~~~
 
 Thymeleaf will automatically search for `/templates/home.html` and return it as the view if it exists.
+
+### view controller
+For a `@Controller` which is used just to redirect a _path_ to a _view_ and it doesn't adds any kind of input to the Model, we may implement it with just a single a line at a `WebConfig` file.  
+The example implemented on top would be better as the following
+~~~ java
+@Configuration
+public class WebConfig implements WebMvcConfig {
+
+  @Override
+  public void addViewControllers(final
+            ViewControllerRegistry registry) {
+    registry.addViewController("/")
+            .setViewName("home");
+  }
+
+}
+~~~
 
 ### request mapping tags
 * `@RequestMapping(method = RequestMethod.GET)` general tag prior to Spring 4.3
@@ -185,8 +203,4 @@ Dependencies to add:
   <artifactId>spring-boot-starter-jdbc</artifactId>
 </dependency>
 ~~~
-~~~ xml
-<dependency>
-  <groupId></groupId>
-</dependency>
-~~~
+**(WIP)**
