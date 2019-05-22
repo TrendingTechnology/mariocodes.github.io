@@ -17,10 +17,10 @@ SELECT user, host FROM mysql.user;
 SHOW GRANTS FOR 'project_user'@'%';
 
 -- delete all previous privileges (if needed)
-REVOKE ALL PRIVILEGES ON `project_node1`.* FROM 'project_user'@'%';
+-- REVOKE ALL PRIVILEGES ON `project_node1`.* FROM 'project_user'@'%';
 
 -- grant new privileges and flush
-GRANT SELECT, INSERT, UPDATE, DELETE ON `project_node1`.* TO 'project_user'@'%';
+GRANT ALL PRIVILEGES ON `project_node1`.* TO 'project_user'@'%';
 FLUSH PRIVILEGES;
 ~~~
 
