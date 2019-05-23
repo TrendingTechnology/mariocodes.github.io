@@ -1,10 +1,50 @@
 ---
 layout: post
-title: Java - experience cheat sheet
-date:   2019-03-14 17:27:00 +0100
+title: Java experience cheat-sheet
+date:   2019-05-23 14:27:00 +0100
 categories: programming java cheat-sheet
 permalink: /notes/languages/java
 ---
+## Read files > 1 GB lazily  
+This reads big files _(>200 MBs)_ sequentially and without loading the whole File in memory. This way we're able to read text files on the Gigabyte level. This example was done reading from a remote SFTP server.  
+
+~~~ java
+final ChannelSftp sftpClient = this.connect();
+final InputStream is = sftpClient.get(file);
+final InputStreamReader isReader
+      = new InputStreamReader(is);  
+
+try (final BufferedReader bffReader  
+      = new BufferedReader(isReader)) {
+  bffReader.lines()
+        .forEach(this::doAction);
+} catch(final IOException ex) {
+  log.error("bla", ex);
+}
+~~~
+<!--more-->
+## Operate a Stream in batches
+_(This solution uses Google Guava)_  
+
+I have a really big `List<Object>` with f.e. 600.000 entries and I'd like to be able to operate them in batches of `n` size.
+~~~ java
+public void handle() {
+  final int batchSize = 100; // n
+  final List<MyEntity> list = this.dao.findAll();
+  Iterators.partition(list.iterator(), batchSize)
+           .forEachRemaining(this::consumer);  
+}
+
+private void consumer(final List<MyEntity> batch) {
+  // this will contain 100 Entities
+  // do x
+}
+~~~
+
+### Reference(s)
+[https://stackoverflow.com/questions/30641383/java-8-stream-with-batch-processing](https://stackoverflow.com/questions/30641383/java-8-stream-with-batch-processing)
+
+
 ## Convert checked into unchecked exception
 _(Test example in private Repo)_  
 
@@ -28,7 +68,6 @@ public File exportFile(String fileName) {
 ### Reference
 [Conference (18:45)](https://www.youtube.com/watch?v=YnzisJh-ZNI)
 
-<!--more-->
 ## Time
 ### Obtain last day of a month
 _(This uses Java8 Time API)_
@@ -43,24 +82,6 @@ final YearMonth yearMonth =
 final int lastDayOfMonth =   
 		yearMonth.lengthOfMonth();
 ```
-
-## Read file sequentially  
-This reads big files _(>200 MBs)_ without loading the whole File in memory. This way we're able to read text files on the Gigabyte level. This example was done reading from a remote SFTP server.  
-
-~~~ java
-final ChannelSftp sftpClient = this.connect();
-final InputStream is = sftpClient.get(file);
-final InputStreamReader isReader
-      = new InputStreamReader(is);  
-
-try (final BufferedReader bffReader  
-      = new BufferedReader(isReader)) {
-  bffReader.lines()
-        .forEach(this::doAction);
-} catch(final IOException ex) {
-  log.error("bla", ex);
-}
-~~~
 
 ## Testing
 ### Inject SpringContext into IT _(JUnit)_
