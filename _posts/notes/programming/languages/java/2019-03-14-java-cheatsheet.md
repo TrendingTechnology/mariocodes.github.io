@@ -44,6 +44,31 @@ private void consumer(final List<MyEntity> batch) {
 ### Reference(s)
 [https://stackoverflow.com/questions/30641383/java-8-stream-with-batch-processing](https://stackoverflow.com/questions/30641383/java-8-stream-with-batch-processing)
 
+## Iterate, operate and delete from a single List
+This has the benefit we don't need to create another List to contain the result of our operation. It comes really handy when we've to operate big Lists of items (+500.000) and we're already near the limit of our VM.  
+~~~ java
+/**
+ * @param originalItems
+ *          huge list
+ * @param filteredItems
+ *          map to filter them into
+ */
+private void filterAndRemove(
+      final List<TYPE> originalItems,
+      final Map<String, List<TYPE>> filteredItems)
+{
+  final ListIterator<TYPE> origIterator =
+      originalItems.listIterator();
+  for (int idx = 0; origIterator.hasNext(); idx++)
+  {
+    final TYPE item = origIterator.next();
+    final String key = this.buildKey(item);
+    filteredItems.put(key, item);
+    origIterator.remove();
+    this.clearMemoryEvery(idx, 1000);
+  }
+}
+~~~
 
 ## Convert checked into unchecked exception
 _(Test example in private Repo)_  
