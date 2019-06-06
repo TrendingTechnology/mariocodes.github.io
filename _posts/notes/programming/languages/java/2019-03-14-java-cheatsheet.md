@@ -210,3 +210,12 @@ When we use Spring's DI in an integration test, the context may be dirty between
 @DirtiesContext(classMode = ClassMode.BEFORE_EACH_TEST_METHOD)  
 public class ASCIISystemIT { ... }  
 ```
+
+## IntelliJ
+### Maven builds, but IntelliJ doesn't find imports  
+* From IntelliJ execute a `mvn clean install`  
+* Execute maven goal -> `mvn dependency:purge-local-repository`  
+* Build -> Rebuild project
+
+#### Reference(s)
+[https://stackoverflow.com/questions/37581523/maven-doesnt-find-dependency](https://stackoverflow.com/questions/37581523/maven-doesnt-find-dependency)
